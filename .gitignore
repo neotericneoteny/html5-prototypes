@@ -21,6 +21,8 @@ db/*.sqlite3
 /tmp/*
 
 # various artifacts
+*.iml
+.idea
 **.war
 *.rbc
 *.sassc
@@ -72,3 +74,6 @@ pickle-email-*.html
 
 # vim artifacts
 **.swp
+
+# Ignore application configuration
+/config/application.yml

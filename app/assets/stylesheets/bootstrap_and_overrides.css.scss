@@ -1,3 +1,22 @@
 @import "bootstrap";
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
+
+.navbar {
+	.nav > li {
+		border-left: 1px solid #d4d4d4;
+
+		&:hover {
+			background-image: -webkit-linear-gradient(top, rgb(242, 242, 242),rgb(202, 202, 202));
+		}
+	}
+	.nav > li:last-child {
+		border-right: 1px solid #d4d4d4;
+	}
+
+
+
+	.nav.account {
+		float: right;
+	}
+}

@@ -1,5 +1,12 @@
-<%= link_to "Html5 File System Api", root_path, :class => 'brand' %>
+<%= link_to "Html5 Designer Prototypes", root_path, :class => 'brand' %>
 <ul class="nav">
+  <% if user_signed_in? %>
+    <li>
+    <%= link_to 'File API', destroy_user_session_path, :method=>'delete' %>
+    </li>
+  <% end %>
+</ul>
+<ul class="nav account">
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>

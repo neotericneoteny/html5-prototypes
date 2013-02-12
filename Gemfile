@@ -28,3 +28,4 @@ gem "jasmine"
 gem "jasmine-headless-webkit"
 gem "guard"
 gem "guard-jasmine-headless-webkit"
+gem 'rb-fsevent', '~> 0.9.1'

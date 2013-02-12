@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Html5FileSystemApi::Application.load_tasks
+Html5Prototypes::Application.load_tasks

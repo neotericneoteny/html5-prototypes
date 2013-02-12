@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Html5FileSystemApi
+module Html5Prototypes
   class Application < Rails::Application
 
     # don't generate RSpec tests for views and helpers

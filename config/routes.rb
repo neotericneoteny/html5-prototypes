@@ -5,4 +5,6 @@ Html5Prototypes::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+
+	match 'file_reader' => 'file_reader#index'
 end

@@ -1,4 +1,4 @@
-describe 'Experimentation', ->
+describe 'Experimenting', ->
 	elem = undefined
 
 	beforeEach ->

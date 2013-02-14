@@ -4,32 +4,23 @@
 
   FileReaderHelper = (function() {
 
-    function FileReaderHelper(fileReaderRef) {
-      this.fileReaderRef = fileReaderRef;
-      this.fileName;
-    }
+    function FileReaderHelper() {}
 
-    FileReaderHelper.prototype.readFile = function(fileName) {
-      this.fileName = fileName;
-      return this.fileSystemRef.root.getFile(this.fileName, {}, (function(fileEntry) {
-        return fileEntry.file((function(file) {
-          var reader;
-          reader = new FileReader();
-          reader.onloadend = function(e) {
-            return alert(this.result);
-          };
-          return reader.readAsText(file);
-        }), (function() {
-          return alert('error handler #1');
-        }));
-      }), (function() {
-        return alert('error handler #2');
-      }));
+    FileReaderHelper.prototype.readAsDataURL = function(fileRef, callback) {
+      var reader;
+      if (fileRef) {
+        switch (true) {
+          case this.mimeType === 'image/jpg' && fileRef.type.match('image.*'):
+            reader = new FileReader();
+            reader.onloadend = function(evt) {
+              if (callback) {
+                return callback(evt.target.result, this);
+              }
+            };
+            return reader.readAsDataURL(fileRef);
+        }
+      }
     };
-
-    FileReaderHelper.prototype.fileName(function() {
-      return this.name;
-    });
 
     return FileReaderHelper;
 

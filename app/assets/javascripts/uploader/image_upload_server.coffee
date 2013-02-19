@@ -7,12 +7,13 @@ s = http.createServer (req, res) ->
 	console.log 'Initialized File Upload request...'
 	
 	fileName = req.headers['file-name']
-	console.log 'File name: ' + fileName
-	
+
 	if(fileName)
 		newFile = fs.createWriteStream fileName
 		fileBytes = req.headers['content-length']
 		uploadedBytes = 0
+
+		console.log 'Received a '+ fileBytes +' byte file with name ' + fileName
 		
 		req.pipe newFile
 		req.on 'data', (chunk) ->
@@ -21,6 +22,7 @@ s = http.createServer (req, res) ->
 			progress = (uploadedBytes/fileBytes) * 100
 			res.write 'progress: ' + parseInt(progress,10) + '%\n'
 		req.on 'end', ->
+			console.log fileName + ' uploaded successfully!'
 			res.end()
 	else
 		res.end()

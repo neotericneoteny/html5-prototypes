@@ -1,6 +1,15 @@
 @import "bootstrap";
 body { padding-top: 60px; }
-@import "bootstrap-responsive";
+//@import "bootstrap-responsive";
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
 
 .navbar {
 	.nav > li {

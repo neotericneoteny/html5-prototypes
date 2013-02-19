@@ -1,3 +1,47 @@
 // Place all the styles related to the file_reader controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.drop_zone {
+	border-top: 1px solid rgb(165, 165, 165);
+	padding-top: 10px;
+}
+
+.row.p {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#drop-image-zone {
+	width: 100px;
+	height: 100px;
+	color: #9a9a9a;
+	border: 5px dashed #9a9a9a;
+	text-align: center;
+
+	.drop_image_label {
+		display: inline-block;
+		margin-top: 30%;
+	}
+
+	&:hover {
+		color: #5f5f5f;
+		border: 5px dashed #5f5f5f;
+	}
+}
+
+ul.group {
+	overflow: hidden;
+	zoom: 1;
+
+	#photo-canvas {
+		ul {
+			li {
+				float: left;
+				margin-bottom: 21px;
+				margin-right: 21px;
+				width: 175px;
+			}
+		}
+	}
+}

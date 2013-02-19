@@ -1,2 +1,45 @@
+<%= javascript_include_tag '/javascripts/FileReaderHelper.js' %>
 <h3>FileReader Demo</h3>
 
+<div class="row">
+	<div id="photo-canvas" class="span12">
+		<ul class="group photo_canvas">
+		  <div id="drop-image-zone"><span class="drop_image_label">Drop images here</span></div>
+		</ul>
+	</div>
+</div>
+
+<!--div class="row">
+	<div class="drop_zone span12">
+		<div id="drop-image-zone"><span class="drop_image_label">Drop images here</span></div>
+
+		<div class="row p">
+			<div class="span12">
+			  <input type="file" name="files" id="file-chooser"/>
+			</div>
+		</div>
+	</div>
+</div-->
+
+<script id="photo-item-partial" type="text/x-handlebars-template">
+  {{#if images}}
+  {{#if images.data}}
+  {{#photoList images.data}}
+  <li class="photo-item">
+    <div class="inner">
+      <div class="primary">
+        <div class="image">
+          <img photoid="{{ id }}" src="{{ images.thumbnail.url }}" width="150" height="150"/>
+        </div>
+        <p>
+        <div class="field grid_4 alpha omega input-checkbox">
+          <div class="info"><label></label></div>
+        </div>
+        </p>
+      </div>
+    </div>
+  </li>
+  {{/photoList}}
+  {{/if}}
+  {{/if}}
+</script>

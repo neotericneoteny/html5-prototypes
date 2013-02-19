@@ -26,6 +26,7 @@ gem "better_errors", ">= 0.3.2", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem "jasmine"
 gem "jasmine-headless-webkit"
+gem "handlebars"
 gem "guard"
 gem "guard-jasmine-headless-webkit"
 gem 'rb-fsevent', '~> 0.9.1'

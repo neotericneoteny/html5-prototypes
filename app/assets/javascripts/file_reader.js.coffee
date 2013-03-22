@@ -13,14 +13,14 @@ $ ->
 			"\nLast Mod: " + evt.target.files[0].lastModifiedDate
 		)
 
-	$('body').bind 'drop', '#drop-image-zone', (evt) ->
-		evt.stopPropagation()
-		evt.preventDefault()
-		console.log 'Dragged over'
-		console.log evt
-
-	$('body').bind 'dragover', '#drop-image-zone', (evt) ->
+	$('body').on 'drop', '#drop-image-zone .drop_image_label', (evt) ->
 		evt.stopPropagation()
 		evt.preventDefault()
 		console.log 'Dropped onto'
+		console.log evt
+
+	$('body').on 'dragover', '#drop-image-zone .drop_image_label', (evt) ->
+		evt.stopPropagation()
+		evt.preventDefault()
+		console.log 'Dragged over'
 		console.log evt

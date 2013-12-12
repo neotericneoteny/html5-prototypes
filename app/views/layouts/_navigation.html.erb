@@ -2,7 +2,7 @@
 <ul class="nav">
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'File API', destroy_user_session_path, :method=>'delete' %>
+    <%= link_to 'FileReader', file_reader_path %>
     </li>
   <% end %>
 </ul>

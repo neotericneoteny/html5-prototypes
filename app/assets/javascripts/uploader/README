@@ -2,12 +2,13 @@ image_upload_server.js listens on port 8090 for image file upload requests. No f
 to only upload images.
 
 
+Run Server:
+
+    $ node image_upload_server.js
+
 Test using cUrl:
 
     $ curl --header "file-name: img-bw_yoda.png" --upload-file img-bw_yoda.png http://localhost:8090
 
-Run Server:
-
-    $ node image_upload_server.js
 
 

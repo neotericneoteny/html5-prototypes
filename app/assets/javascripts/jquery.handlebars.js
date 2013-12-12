@@ -7,8 +7,9 @@
 			if (template instanceof jQuery) {
 				template = $(template).html();
 			}
-
-			compiled[template] = Handlebars.compile(template);
+			if(!compiled[template]) {
+				compiled[template] = Handlebars.compile(template);
+			}
 			this.html(compiled[template](data));
 		}
 	};

@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+	readImages = []
+	frh = new FileReaderHelper
+
 	# file chooser component handler
 	$('body').bind 'change', '#file-chooser', (evt) ->
 		console.log (
@@ -16,11 +19,16 @@ $ ->
 	$('body').on 'drop', '#drop-image-zone .drop_image_label', (evt) ->
 		evt.stopPropagation()
 		evt.preventDefault()
-		console.log 'Dropped onto'
+		frh.readAsDataURL evt.originalEvent.dataTransfer.files[0], (fileResult, fileReader) ->
+			console.log 'Dropped onto'
+			console.log fileResult
+
+			photoTemplate = $('#photo-item-partial').handlebars { images: { data: [{id:1,url: fileResult}] } }
+			$('.photo_canvas').append photoTemplate
 		console.log evt
 
 	$('body').on 'dragover', '#drop-image-zone .drop_image_label', (evt) ->
 		evt.stopPropagation()
 		evt.preventDefault()
-		console.log 'Dragged over'
-		console.log evt
+#		console.log 'Dragged over'
+#		console.log evt

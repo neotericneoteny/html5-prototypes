@@ -51,4 +51,6 @@ Html5Prototypes::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+	config.server_static_assets = true
 end

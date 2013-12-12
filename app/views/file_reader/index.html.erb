@@ -1,10 +1,11 @@
 <%= javascript_include_tag '/javascripts/FileReaderHelper.js' %>
+
 <h3>FileReader Demo</h3>
 
 <div class="row">
 	<div id="photo-canvas" class="span12">
-		<ul class="group photo_canvas">
-		  <div id="drop-image-zone"><span class="drop_image_label">Drop images here</span></div>
+			<ul class="group photo_canvas">
+		  <li><div id="drop-image-zone"><span class="drop_image_label">Drop images here</span></div></li>
 		</ul>
 	</div>
 </div>
@@ -13,12 +14,13 @@
 <script id="photo-item-partial" type="text/x-handlebars-template">
   {{#if images}}
   {{#if images.data}}
-  {{#photoList images.data}}
+  <!--{{#photoList images.data}}-->
+	{{#each images.data}}
   <li class="photo-item">
     <div class="inner">
       <div class="primary">
         <div class="image">
-          <img photoid="{{ id }}" src="{{ images.thumbnail.url }}" width="150" height="150"/>
+          <img photoid="{{ id }}" src="{{ url }}" width="150" height="150"/>
         </div>
         <p>
         <div class="field grid_4 alpha omega input-checkbox">
@@ -28,7 +30,8 @@
       </div>
     </div>
   </li>
-  {{/photoList}}
+	{{/each}}
+  <!--{{/photoList}}-->
   {{/if}}
   {{/if}}
 </script>
